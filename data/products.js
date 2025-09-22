@@ -27,5 +27,7 @@ export const products = [
     category: "hightech",
     image: "https://via.placeholder.com/300x200?text=Casque",
   },
+  { id: 5, name: "Aspirateur", price: 150, category: "hightech", image: "/images/aspirateur.jpg" },
+  { id: 6, name: "Nettoyant sol", price: 20, category: "nettoyage", image: "/images/nettoyant.jpg" }
   // Ajoute autant de produits que tu veux
 ]
