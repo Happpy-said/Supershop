@@ -1,12 +1,6 @@
-
-import "./globals.css"
+import "../globals.css"  // ou "./globals.css" selon l’emplacement
 import Header from "../components/Header"
 import { CartProvider } from "../context/CartContext"
-
-export const metadata = {
-  title: "Supershop",
-  description: "Boutique en ligne multi-catégories",
-}
 
 export default function RootLayout({ children }) {
   return (
@@ -15,9 +9,6 @@ export default function RootLayout({ children }) {
         <CartProvider>
           <Header />
           <main>{children}</main>
-          <footer className="bg-green text-beige text-center p-4 mt-8">
-            © 2025 Supershop. Tous droits réservés.
-          </footer>
         </CartProvider>
       </body>
     </html>
