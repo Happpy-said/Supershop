@@ -1,0 +1,10 @@
+/* globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* tes styles personnalisés */
+body {
+  background-color: #f5f5dc; /* beige clair */
+  color: #006400; /* vert */
+}
