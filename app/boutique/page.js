@@ -7,19 +7,13 @@ export default function Boutique() {
   const [filter, setFilter] = useState("all")
   const [sortPrice, setSortPrice] = useState("none")
 
-  // Filtrage
   let filteredProducts = filter === "all" ? products : products.filter(p => p.category === filter)
-
-  // Tri par prix
   if (sortPrice === "asc") filteredProducts.sort((a, b) => a.price - b.price)
   if (sortPrice === "desc") filteredProducts.sort((a, b) => b.price - a.price)
 
   return (
     <div className="p-8">
       <h1 className="text-3xl font-bold mb-6 text-center">Boutique Supershop</h1>
-      <p className="text-center mb-8">Filtrez et parcourez nos produits par catégorie et prix.</p>
-
-      {/* Filtres par catégorie */}
       <div className="flex justify-center gap-4 mb-6 flex-wrap">
         <button onClick={() => setFilter("all")} className="bg-green text-beige px-4 py-2 rounded hover:bg-green-700">Tous</button>
         <button onClick={() => setFilter("cosmetiques")} className="bg-green text-beige px-4 py-2 rounded hover:bg-green-700">Cosmétiques</button>
@@ -27,18 +21,12 @@ export default function Boutique() {
         <button onClick={() => setFilter("bio")} className="bg-green text-beige px-4 py-2 rounded hover:bg-green-700">BIO</button>
         <button onClick={() => setFilter("hightech")} className="bg-green text-beige px-4 py-2 rounded hover:bg-green-700">High Tech</button>
       </div>
-
-      {/* Tri par prix */}
       <div className="flex justify-center gap-4 mb-8">
         <button onClick={() => setSortPrice("asc")} className="bg-beige text-green px-4 py-2 rounded border border-green hover:bg-green hover:text-beige transition">Prix ↑</button>
         <button onClick={() => setSortPrice("desc")} className="bg-beige text-green px-4 py-2 rounded border border-green hover:bg-green hover:text-beige transition">Prix ↓</button>
       </div>
-
-      {/* Grille des produits */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {filteredProducts.map(product => (
-          <ProductCard key={product.id} product={product} />
-        ))}
+        {filteredProducts.map(product => <ProductCard key={product.id} product={product} />)}
       </div>
     </div>
   )
